@@ -65,11 +65,13 @@ document.onkeyup = function (event) {
     // If wrong, alert them they are wrong.
     else {
         alert("Wrong!");
-        losses++;
+        
         updateScoreGuess(userInput);
 
         if (guessesLeft === 0) {
             alert("I'll pick a new letter...");
+            losses++;
+            updateScoreGuess(userInput);
             newGame();
         }
     }
